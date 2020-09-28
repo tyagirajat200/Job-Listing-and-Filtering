@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { FilterService } from './../Data/filter.service';
 import { role, technology, experience } from './../JobsData';
 import { Component, OnInit } from '@angular/core';
@@ -14,8 +15,7 @@ export class JobFilterComponent implements OnInit {
   technology: any = [];
   experience: any = []
 
-  constructor(private filterService: FilterService) { }
-
+  constructor(private filterService: FilterService, private httpClient: HttpClient) { }
   form = new FormGroup({
     roles: new FormControl([]),
     technology: new FormControl([]),

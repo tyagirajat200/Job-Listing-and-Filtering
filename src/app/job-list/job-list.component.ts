@@ -2,6 +2,7 @@ import { FilterService } from './../Data/filter.service';
 import { data } from './../JobsData';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-job-list',
@@ -15,10 +16,12 @@ export class JobListComponent implements OnInit {
   start = 0;
   end = 4;
 
-  constructor(private filterService: FilterService, private router: Router) { }
+  constructor(private filterService: FilterService, private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.jobs = data;
+    this.httpClient.get('assets/data.json').subscribe((res: any) => {
+      this.jobs = res.data;
+    });
     this.filterService.filterData.subscribe(filter => {
       console.log(filter);
       if (filter) {
@@ -70,10 +73,4 @@ export class JobListComponent implements OnInit {
   jobDetail(id): void {
     this.router.navigate([`detail/${id}`]);
   }
-
-  // tslint:disable-next-line: use-lifecycle-interface
-  ngAfterViewInit(): void {
-    this.jobs = data;
-  }
-
 }

@@ -7,6 +7,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobFilterComponent } from './job-filter/job-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as $ from 'jquery';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import * as $ from 'jquery';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

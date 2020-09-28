@@ -21,10 +21,10 @@
   <nav aria-label="Page navigation example" class="w-100 mr-5">
     <ul class="pagination justify-content-end">
       <li class="page-item" [ngClass]="{'disabled': !start}">
-        <button class="page-link" (click)='changePage(start - limit)'>Previous</button>
+        <button class="page-link previous-page" (click)='changePage(start - limit)' [disabled]='!start'>Previous</button>
       </li>
       <li class="page-item" [ngClass]="{'disabled': end>=jobs.length}">
-        <button class="page-link" (click)='changePage(start + limit)'>Next</button>
+        <button class="page-link next-page" (click)='changePage(start + limit)' [disabled]='end>=jobs.length'>Next</button>
       </li>
     </ul>
   </nav>

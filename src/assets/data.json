@@ -18,7 +18,7 @@
         {
             "id": 2,
             "company": "Amazon",
-            "logo": "https://job-listings-with-filtering.marcomadera.vercel.app/images/photosnap.svg",
+            "logo": "https://pedantic-jennings-8edbeb.netlify.app/images/account.svg",
             "position": "Front-End Developer",
             "role": "Frontend",
             "experience": "Junior",
@@ -33,7 +33,7 @@
         {
             "id": 3,
             "company": "Flipkart",
-            "logo": "https://job-listings-with-filtering.marcomadera.vercel.app/images/photosnap.svg",
+            "logo": "https://pedantic-jennings-8edbeb.netlify.app/images/manage.svg",
             "position": "Fullstack-End Developer",
             "role": "Fullstack",
             "experience": "Midweight",
@@ -48,7 +48,7 @@
         {
             "id": 4,
             "company": "Snapdeal",
-            "logo": "https://job-listings-with-filtering.marcomadera.vercel.app/images/photosnap.svg",
+            "logo": "https://pedantic-jennings-8edbeb.netlify.app/images/myhome.svg",
             "position": "Backend-End Developer",
             "role": "Backend",
             "experience": "Senior",

@@ -1,31 +1,36 @@
 <app-job-filter></app-job-filter>
-<div class="row mt-2 mx-auto" id="jobs">
-  <div class="job-list-{{item.id}} p-2 bg-secondary m-3 d-flex flex-column  flex-sm-row w-100" *ngFor="let item of jobs  | slice : start : end"
-    (click)='jobDetail(item.id)' role="button">
-    <div class="d-flex flex-row mb-4 mb-sm-0  brand">
-      <img class="mr-2" src={{item.logo}} alt="">
-      <div>
-        <h5>{{item.company}}</h5>
-        <h6>{{item.position}}</h6>
+<div class="back">
+  <div class="row pt-2 mx-auto" id="jobs">
+    <div class="job-list-{{item.id}} p-2 bg-white m-3 d-flex flex-column  flex-sm-row w-100"
+      *ngFor="let item of jobs  | slice : start : end" (click)='jobDetail(item.id)' role="button"
+      style="border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,.1)">
+      <div class="d-flex flex-row mb-4 mb-sm-0  brand">
+        <img class="mr-2" src={{item.logo}} alt="">
         <div>
-          <span>{{item.experience +' | '+ item.contract + ' | '+ item.location}}</span>
+          <h5>{{item.company}}</h5>
+          <h6>{{item.position}}</h6>
+          <div>
+            <span>{{item.experience +' | '+ item.contract + ' | '+ item.location}}</span>
+          </div>
         </div>
       </div>
+      <div class="d-flex flex-row flex-wrap justify-content-start align-items-center skils">
+        <h5 class="mr-2  rounded-pill py-1 px-2" style="background-color: #e6fffa;">{{item.role}}</h5>
+        <h5 class="mr-2  rounded-pill py-1 px-2" style="background-color: #e6fffa;" *ngFor="let tech of item.technology">{{tech}}</h5>
+        <h5 class="mr-2  rounded-pill py-1 px-2" style="background-color: #e6fffa;">{{item.ctc}}-LPA</h5>
+      </div>
     </div>
-    <div class="d-flex flex-row flex-wrap justify-content-start align-items-center skils">
-      <h5 class="mr-2 bg-info  rounded-pill py-1 px-2">{{item.role}}</h5>
-      <h5 class="mr-2 bg-info  rounded-pill py-1 px-2" *ngFor="let tech of item.technology">{{tech}}</h5>
-      <h5 class="mr-2 bg-info  rounded-pill py-1 px-2">{{item.ctc}}-LPA</h5>
-    </div>
+    <nav aria-label="Page navigation example" class="w-100 mr-5" *ngIf="jobs.length">
+      <ul class="pagination justify-content-end">
+        <li class="page-item" [ngClass]="{'disabled': !start}">
+          <button class="page-link previous-page font-weight-bold" (click)='changePage(start - limit)'
+            [disabled]='!start' style="border-color: #343a40;">Previous</button>
+        </li>
+        <li class="page-item" [ngClass]="{'disabled': end>=jobs.length}">
+          <button class="page-link next-page font-weight-bold" (click)='changePage(start + limit)'
+            [disabled]='end>=jobs.length' style="border-color: #343a40;">Next</button>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <nav aria-label="Page navigation example" class="w-100 mr-5">
-    <ul class="pagination justify-content-end">
-      <li class="page-item" [ngClass]="{'disabled': !start}">
-        <button class="page-link previous-page" (click)='changePage(start - limit)' [disabled]='!start'>Previous</button>
-      </li>
-      <li class="page-item" [ngClass]="{'disabled': end>=jobs.length}">
-        <button class="page-link next-page" (click)='changePage(start + limit)' [disabled]='end>=jobs.length'>Next</button>
-      </li>
-    </ul>
-  </nav>
 </div>

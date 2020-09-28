@@ -69,7 +69,7 @@ export const data = [
         contract: 'Full-Time',
         ctc: '10',
         location: 'Bangalore',
-        technology: ['Angular', 'Node', 'SQL'],
+        technology: ['Angular', 'NodeJs', 'SQL'],
         website: 'https://console.codejudge.io',
         about: 'Codejudge helps developers show off their skill by building a project and getting fast-tracked to jobs offers.',
         description: 'Determining the structure and design of web pages. Ensuring web design is optimized for smartphones'
@@ -84,7 +84,7 @@ export const data = [
         contract: 'Full-Time',
         ctc: '6',
         location: 'Chennai',
-        technology: ['Django', 'Node', 'SQL'],
+        technology: ['Django', 'NodeJs', 'SQL'],
         website: 'https://console.codejudge.io',
         about: 'Codejudge helps developers show off their skill by building a project and getting fast-tracked to jobs offers.',
         description: 'Determining the structure and design of web pages. Ensuring web design is optimized for smartphones'

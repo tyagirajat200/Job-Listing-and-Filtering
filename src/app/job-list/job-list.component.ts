@@ -15,17 +15,19 @@ export class JobListComponent implements OnInit {
   limit = 4;
   start = 0;
   end = 4;
+  data = [];
 
   constructor(private filterService: FilterService, private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     this.httpClient.get('assets/data.json').subscribe((res: any) => {
       this.jobs = res.data;
+      this.data = res.data;
     });
     this.filterService.filterData.subscribe(filter => {
       console.log(filter);
       if (filter) {
-        this.jobs = data.filter(value => {
+        this.jobs = this.data.filter(value => {
           if (value.ctc >= filter.ctc) {
             if (this.checkTechnology(filter.technology, value.technology) &&
               this.checkRole(filter.roles, value.role) &&

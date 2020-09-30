@@ -17,6 +17,7 @@ export class JobDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.params.id);
     console.log(this.id);
+    console.log("fefe");
     this.httpClient.get('assets/data.json').subscribe((res: any) => {
       this.jobs = res.data.find(value => value.id === this.id);
     });

@@ -12,7 +12,7 @@ export class JobDetailComponent implements OnInit {
 
   jobs: any = {};
   id: number;
-  constructor(private route: ActivatedRoute ,private httpClient: HttpClient) { }
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.params.id);
